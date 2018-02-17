@@ -2,6 +2,7 @@ package com.example.android.sunshine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -13,5 +14,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         // TODO (2) Display the weather forecast that was passed from MainActivity
+        if(getIntent().hasExtra("weather")){
+            Toast.makeText(this,getIntent().getStringExtra("weather"),Toast.LENGTH_SHORT).show();
+        }
     }
 }
